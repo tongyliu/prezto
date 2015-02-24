@@ -41,7 +41,7 @@ function prompt_steeeft_setup {
   #    "%F{135}" # Purple
   #    "%F{161}" # Hotpink
   #    "%F{118}" # Limegreen
-  #  "%F{white}"
+  #    "%F{white}"
   #  )
   #else
     _prompt_steeeft_colors=(
