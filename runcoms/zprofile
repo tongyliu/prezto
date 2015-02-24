@@ -72,10 +72,10 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+<<<<<<< HEAD
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
 # RVM
 source $HOME/.rvm/scripts/rvm
-
