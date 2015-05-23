@@ -79,3 +79,12 @@ fi
 # RVM
 source $HOME/.rvm/scripts/rvm
 
+# Custom commands
+alias gs='git status'
+alias gb='git branch'
+alias gc='git checkout'
+alias gd='git diff'
+alias ga='git add'
+alias gl='git log'
+
+
