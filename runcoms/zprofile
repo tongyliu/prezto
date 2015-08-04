@@ -3,7 +3,30 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+#   Tong Liu <Nobody Knows>
+
+#~~~~~~~~~~~~~~~ Tong's Stuff ~~~~~~~~~~~~~~~
+
+# Custom commands
+alias gs='git status'
+alias gb='git branch'
+alias gc='git checkout'
+alias gd='git diff'
+alias ga='git add'
+alias gl='git log'
+alias ew='clear'
+alias wert='cd ~/Developer'
+
+# Path in title
+settitle() { printf "\e]0;$@\a" }
+dir_in_title() { settitle $PWD }
+chpwd_functions=(dir_in_title)
+dir_in_title
+
+# RVM
+source $HOME/.rvm/scripts/rvm
+
+#~~~~~~~~~~~~~ End Tong's Stuff ~~~~~~~~~~~~~
 
 #
 # Browser
@@ -49,7 +72,6 @@ path=(
 
 #
 # Less
-#
 
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
@@ -75,16 +97,4 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
-
-# RVM
-source $HOME/.rvm/scripts/rvm
-
-# Custom commands
-alias gs='git status'
-alias gb='git branch'
-alias gc='git checkout'
-alias gd='git diff'
-alias ga='git add'
-alias gl='git log'
-
 

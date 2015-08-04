@@ -7,9 +7,9 @@ pmodload 'helper'
 function prompt_steeeft_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    branch_format="(${_prompt_steeeft_colors[1]}%b%f%u%c${_prompt_steeeft_colors[4]}●%f)"
+    branch_format="%F${_prompt_steeeft_colors[4]}●%f%u%c%F${_prompt_steeeft_colors[1]} %b%f"
   else
-    branch_format="(${_prompt_steeeft_colors[1]}%b%f%u%c)"
+    branch_format="%u%c%F${_prompt_steeeft_colors[1]} %b%f"
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
@@ -50,7 +50,7 @@ function prompt_steeeft_setup {
       "%F{magenta}"
       "%F{red}"
       "%F{green}"
-	  "%F{white}"
+      "%F{white}"
     )
   #fi
 
@@ -61,8 +61,8 @@ function prompt_steeeft_setup {
   #   %a - action (e.g. rebase-i)
   #   %R - repository path
   #   %S - path in the repository
-  local branch_format="(${_prompt_steeeft_colors[1]}%b%f%u%c)"
-  local action_format="(${_prompt_steeeft_colors[5]}%a%f)"
+  local branch_format="%u%c %F${_prompt_steeeft_colors[1]}%b%f"
+  local action_format="${_prompt_steeeft_colors[5]}%a%f"
   local unstaged_format="${_prompt_steeeft_colors[2]}●%f"
   local staged_format="${_prompt_steeeft_colors[5]}●%f"
   
@@ -79,7 +79,7 @@ function prompt_steeeft_setup {
   zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
 
   # Define prompts.
-  PROMPT="${_prompt_steeeft_colors[6]}%n%f:${_prompt_steeeft_colors[5]}%~%f %B%F{red}❯%F{yellow}❯%F{green}❯%f%b "
+  PROMPT="${_prompt_steeeft_colors[1]}%B%n%b%F${_prompt_steeeft_colors[5]} in %~%f %B%F{red}❯%F{yellow}❯%F{green}❯%f%b "
   RPROMPT=""'${vcs_info_msg_0_}'""
 }
 
